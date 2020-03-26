@@ -8,8 +8,11 @@
 #import "flutternewrelic-Swift.h"
 #endif
 
+#import "NewRelicAgent/NewRelic.h"
+
 @implementation FlutternewrelicPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+  [NewRelicAgent startWithApplicationToken:@"addyourapplicationtokenhere"];
   [SwiftFlutternewrelicPlugin registerWithRegistrar:registrar];
 }
 @end
